@@ -1,0 +1,39 @@
+.book-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    row-gap: 5px;
+
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    padding: 20px;
+
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
+    box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
+}
+.book-cover {
+    width: 100%;
+}
+
+
+.book-details {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+
+    column-gap: 7px;
+}
+
+.book-price {
+    font-weight: 700;
+}
+
+.book-info{
+    color:black;
+}

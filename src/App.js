@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,Routes
+} from 'react-router-dom';
+
+import Authorization from './components/authorization/Authorization';
+import BookPage from './components/bookpage/Bookpage';
+import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/Navbar';
+import Catalog from './pages/Catalog';
+import Page404 from './pages/Page404';
+import './styles/reset.css';
+import './styles/style.css';
+import ScrollToTop from './utils/ScrollToTop';
+import Cart from './pages/Cart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <ScrollToTop/>
+      <div className="App">
+        <Navbar />
+
+        <Routes>
+          <Route path="/login" element={<Authorization />} />
+          <Route path="/" element={<Catalog />} />
+          <Route path="/book/:id" element={<BookPage />} />
+          <Route path="*" element={<Page404 />} />
+          <Route path="/cart" element={<Cart />}    />
+        </Routes>
+        
+        <Footer />
+      </div>  
+    </Router>
   );
 }
 
