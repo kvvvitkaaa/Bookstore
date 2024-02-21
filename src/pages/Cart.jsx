@@ -6,7 +6,8 @@ import { useContext } from "react";
 
 const Cart = () => {
 
-    const {cartItems} = useContext(ShopContext);
+    const {cartItems, getTotalPriceCart} = useContext(ShopContext);
+    const total = getTotalPriceCart();
 
     return ( 
         <div className="container">
@@ -14,15 +15,15 @@ const Cart = () => {
            <div className="cart-wrapper">
                {BOOKS.books.map((book) => {
                     if(cartItems[book.id] !== 0 ){
-                        return <Item data={book} counter={cartItems[book.id]} />
+                        return <Item data={book} counter={cartItems[book.id]} key={book.id}/>
                     }
-                    return null;
                })}
-
-               <div className="cart-menu">
-                    <button className="btn">Purchase</button> 
-                    <button className="btn">Continue shopping</button>
-               </div>
+                {total > 0  ?
+                    <div className="cart-menu">
+                            <div><strong>Subtotal: ${total}</strong></div>
+                            <button className="btn btn-submit">Purchase</button> 
+                    </div> 
+               :    <h2 className="empty-message">Your cart is empty</h2>}
             </div>
         </div>
      );

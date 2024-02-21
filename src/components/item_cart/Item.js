@@ -1,35 +1,23 @@
-import Counter from "../counter/Counter";
 import { ShopContext } from "../../context/shopContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const Item = (props) => {
 
-    const {title, price} = props.data;
-    const {getTotalPriceItem} = useContext(ShopContext);
+    const {title, price, id} = props.data;
+    const {getTotalPriceItem, removeFromCart, cartItems, addToCart} = useContext(ShopContext);
 
-    const prevCounter = props.counter;
-
-    const [counter, setCounter] = useState(prevCounter);
-
-    const handleClick = (action) => {
-        if (action === 'minus' && counter > 1) {
-            setCounter(counter - 1);
-        } else if (action === 'plus' && counter < 42) {
-            setCounter(counter + 1);
-        }
-    };
     return ( 
         <div className="cart-item">
             <div className="book-title">
                 {title}
             </div>
             <div className="counter-wrapper">
-                <button className="counter-btn" onClick={() => handleClick('minus')}>-</button>
-                <div className="counter" data-counter>{counter}</div>
-                <button className="counter-btn" onClick={() => handleClick('plus')}>+</button>
+                <button className="counter-btn" onClick={() => removeFromCart(id)}>-</button>
+                <div className="counter" data-counter>{cartItems[id]}</div>
+                <button className="counter-btn" onClick={() => addToCart(id, 1)}>+</button>
             </div>
             <div>
-                ${getTotalPriceItem(counter, price)}
+                ${getTotalPriceItem(cartItems[id], price)}
             </div>
         </div>
      );
