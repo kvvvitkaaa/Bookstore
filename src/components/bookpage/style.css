@@ -30,40 +30,38 @@
 
 .payment {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
-    column-gap: 20px;
+    column-gap: 60px;
 
     background-color: white;
     border-radius: 10px;
-
     padding: 15px;
 
     position: relative;
-
     min-height: 200px;
     min-width: 150px;
 
     -webkit-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
-
 }
 
 .payment-column {
-    text-align:left;
-
-    display: flex;
-
-    flex-direction: column;
-    row-gap: 15px;
+    height: 300px;
 }
 
-.sum {
-    font-weight: 700;
-    text-align: center;
+.payment-column:first-child{
+    text-align: left;
 }
+.payment-column:nth-child(2){
+    text-align: right;
+}
+
+.payment-column li {
+    height: 30px;
+    margin-bottom: 10px;
+}
+
 
 .row .btn {
     position: absolute;

@@ -12,7 +12,7 @@ const Book = (props) => {
             <img className="book-cover" src={props.image || notFound}  alt={props.title} />
 
             <div className='book-info'>
-                <h2 className='book-title'>{props.title}</h2>
+                <h2 className='book-title'>{props.title.length > 24 ? props.title.slice(0, 23) + "..." : props.title}</h2>
                 <p className='book-author'>{props.author}</p>
             </div>
 

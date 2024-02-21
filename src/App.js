@@ -13,23 +13,28 @@ import './styles/reset.css';
 import './styles/style.css';
 import ScrollToTop from './utils/ScrollToTop';
 import Cart from './pages/Cart';
+import PrivateRoute from './utils/privateRoute';
+import { ShopContextProvider } from './context/shopContext';
+
 
 function App() {
   return (
     <Router>
       <ScrollToTop/>
       <div className="App">
-        <Navbar />
-
-        <Routes>
-          <Route path="/login" element={<Authorization />} />
-          <Route path="/" element={<Catalog />} />
-          <Route path="/book/:id" element={<BookPage />} />
-          <Route path="*" element={<Page404 />} />
-          <Route path="/cart" element={<Cart />}    />
-        </Routes>
-        
-        <Footer />
+        <ShopContextProvider>
+          <Navbar />
+          <Routes>
+            <Route path="/login" element={<Authorization />} />
+            <Route path="*" element={<Page404 />} />
+            <Route element={<PrivateRoute />}>
+              <Route path="/" element={<Catalog />} />
+              <Route path="/book/:id" element={<BookPage />} />
+              <Route path="/cart" element={<Cart />}    />
+            </Route>
+          </Routes>
+          <Footer />
+        </ShopContextProvider>
       </div>  
     </Router>
   );

@@ -1,7 +1,7 @@
 import "./style.css";
 import { useState } from 'react';
 
-const Counter = ({onCountChange}) => {
+const Counter = ({ onCounterChange }) => {
 
     const [counter, setCounter] = useState(1);
 
@@ -13,11 +13,13 @@ const Counter = ({onCountChange}) => {
         }
     };
 
+    onCounterChange(counter);
+
     return ( 
         <div className="counter-wrapper">
-            <div className="counter-btn" data-action="minus" onClick={() => handleClick('minus')}>-</div>
+            <button className="counter-btn" data-action="minus" onClick={() => handleClick('minus')}>-</button>
             <div className="counter" data-counter>{counter}</div>
-            <div className="counter-btn" data-action="plus" onClick={() => handleClick('plus')}>+</div>
+            <button className="counter-btn" data-action="plus" onClick={() => handleClick('plus')}>+</button>
         </div>
      );
 }
