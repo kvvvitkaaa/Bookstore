@@ -9,6 +9,8 @@
 }
 
 .cover-wrapper {
+    min-width: fit-content;
+    max-height: fit-content;
     padding: 10px;
     border-radius: 10px;
     background-color: white;
@@ -38,17 +40,17 @@
     padding: 15px;
 
     position: relative;
-    min-height: 200px;
-    min-width: 150px;
+    min-height: fit-content;
+    min-width: fit-content;
 
     -webkit-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
 }
 
-.payment-column {
-    height: 300px;
-}
+/* .payment-column {
+    min-height: 300px;
+} */
 
 .payment-column:first-child{
     text-align: left;

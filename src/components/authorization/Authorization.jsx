@@ -1,7 +1,7 @@
 import "./style.css";
 
 import avatar from "../../img/avatar.svg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Authorization = () => {
@@ -11,15 +11,16 @@ const Authorization = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(username !== '' && username.length > 4 || username.length < 16 ) {
+        if(username !== '' && (username.length > 4 || username.length < 16) ) {
             navigation('/');
             localStorage.setItem('username', JSON.stringify(username));
         }
     }
 
     const handleInput = (e) => {
-        setUsername(e.target.value);
+        setUsername(e.target.value.trim());
     }
+
 
     return ( 
         <div className="container">
@@ -36,6 +37,7 @@ const Authorization = () => {
                         placeholder="Enter your username.." 
                         aria-describedby="user-email"
                         aria-invalid="false"
+                        onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '')}
                         onChange={handleInput}
                     />
                     <p>Your username should be from 4 to 16 characters</p>

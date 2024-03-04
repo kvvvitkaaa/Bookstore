@@ -2,7 +2,6 @@ import Book from "../components/book/Book";
 import booksData from "../helpers/books.json";
 import { useState} from "react";
 import search from '../img/search.svg';
-import Page404 from '../pages/Page404';
 
 const Catalog = () => {
 
@@ -33,7 +32,7 @@ const Catalog = () => {
     })
 
     return ( 
-        <div className="container main">
+        <div className="mainPage-container">
             <div className="options">
                 <select className="options-sorting" defaultValue='none' onChange={handleSetSorting} name="sort">
                     <option value="none" hidden disabled>Sort by</option>
@@ -42,7 +41,7 @@ const Catalog = () => {
                     <option value="abc">Alphabetically</option>
                 </select >
                 <div className="options-search">
-                    <img src={search} width='30' height='30' />
+                    <img src={search} width='30' height='30' alt=''/>
                     <input type="text" placeholder="search..." className="search" name="search" onChange={handleSearch}/>
                 </div>
             </div>

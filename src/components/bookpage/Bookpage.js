@@ -6,7 +6,6 @@ import notFound from "../../img/notFound.png";
 import Counter from '../counter/Counter';
 
 import "./style.css";
-import Cart from '../../pages/Cart';
 import {ShopContext} from '../../context/shopContext';
 
 function BookPage() {
@@ -15,14 +14,14 @@ function BookPage() {
     const book = books.books[id];
 
     const {getTotalPriceItem, addToCart, cartItems} = useContext(ShopContext);
-    const [counterValue, setCounterValue] = useState(1); // Состояние для хранения текущего значения счетчика
+    const [counterValue, setCounterValue] = useState(1);
 
     const handleCounterChange = (value) => {
-        setCounterValue(value); // Обновляем текущее значение счетчика
+        setCounterValue(value); 
     };
 
     return (
-        <div className="container main">
+        <div className="mainPage-container">
             <div className="row">
 
                 <div className='cover-wrapper'>
@@ -48,7 +47,10 @@ function BookPage() {
                         <li><Counter onCounterChange={handleCounterChange}/></li>
                         <li><b>${getTotalPriceItem(counterValue, book.price)}</b></li>
                     </ul>
-                    <button className="btn" onClick={() => {addToCart(book.id, counterValue)}}>Add to cart</button>
+                    <button className="btn" onClick={() => {
+                        addToCart(book.id, counterValue);
+                        alert('Item successfully added to your cart')
+                    }}>Add to cart {cartItems[book.id] > 0 && <>({cartItems[book.id]})</>}</button>
                 </div>
             </div>
             <aside className="book-description">

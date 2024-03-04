@@ -18,7 +18,7 @@ const Counter = ({ onCounterChange }) => {
     return ( 
         <div className="counter-wrapper">
             <button className="counter-btn" data-action="minus" onClick={() => handleClick('minus')}>-</button>
-            <div className="counter" data-counter>{counter}</div>
+            <div className="counter" data-counter >{counter}</div>
             <button className="counter-btn" data-action="plus" onClick={() => handleClick('plus')}>+</button>
         </div>
      );

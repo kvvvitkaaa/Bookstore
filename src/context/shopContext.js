@@ -13,24 +13,22 @@ const getDefaultCart = () => {
     return defaultCart;
 }
 
+const getLocalStorage = () => {
+    const cartData = localStorage.getItem('cartdata')
+    if (cartData) {
+      return JSON.parse(cartData)
+    } else {
+      return getDefaultCart();
+    }
+  }  
+
+
 export const ShopContextProvider = (props) => {
-    const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [cartItems, setCartItems] = useState(getLocalStorage());
 
-     // Загрузка корзины из локального хранилища при загрузке страницы
-     useEffect(() => {
-        const savedCartItems = JSON.parse(localStorage.getItem("cartItems"));
-        if (savedCartItems) {
-            setCartItems(savedCartItems);
-        }
-    }, []);
-
-    // Сохранение корзины в локальное хранилище при изменении
     useEffect(() => {
-        localStorage.setItem("cartItems", JSON.stringify(cartItems));
-        console.log(JSON.parse(localStorage.getItem("cartItems")));
-    }, [setCartItems]);
-
-
+        localStorage.setItem('cartdata', JSON.stringify(cartItems));
+    }, [cartItems])
 
     const getTotalPriceItem = (count, price) => {
 
@@ -53,14 +51,21 @@ export const ShopContextProvider = (props) => {
     }
 
     const addToCart = (itemId, count) => {
-        return setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + Number(count)}));
+        setCartItems((prev) => {
+            return { ...prev, [itemId]: prev[itemId] + Number(count) };
+        });
     }
 
     const removeFromCart = (itemId) => {
         return setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1}));
     }
 
-    const contextValue = {getTotalPriceItem,addToCart,removeFromCart, cartItems, getTotalPriceCart};
+    const clearCart = () => {
+        localStorage.removeItem('cartdata');
+        return setCartItems(getDefaultCart());
+    }
+
+    const contextValue = {getTotalPriceItem,addToCart,removeFromCart, cartItems, getTotalPriceCart, clearCart};
 
     return <ShopContext.Provider value={contextValue}>
         {props.children}

@@ -12,6 +12,8 @@ p+p {
     position: relative;
     padding: 15px 15px 0; 
     background-color: #fff;
+    min-width: 100%;
+    margin: 0 auto;
 }
 
 .App {
@@ -28,6 +30,7 @@ p+p {
 
 html, body {
     min-height: 100vh;
+    min-width: 100vmax;
 }
 
 h1 {
@@ -91,10 +94,13 @@ h2 {
 }
 /* catalog of books */
 
-.main {
+.mainPage-container {
     background-color: black;
-    margin: 0;
     min-height: 100vh;
+    min-width: 100%;
+
+    padding: 10px 15px;
+    margin: 0 auto;
 }
 
 .options{
