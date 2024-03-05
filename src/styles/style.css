@@ -185,11 +185,17 @@ h2 {
 .catalog-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Создаем 3 колонки одинаковой ширины */
-    grid-gap: 30px 40px; 
+    gap: 2em 2em; 
 
     margin: 30px auto;
 
     background-color: black;
+}
+
+@media (max-width: 768px) {
+    .catalog-wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* 404 page */
