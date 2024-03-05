@@ -30,17 +30,16 @@ p+p {
 
 html, body {
     min-height: 100vh;
-    min-width: 100vmax;
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 3em;
     font-weight: 500;
 }
 
 h2 {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1em;
 }
 
 .btn {
