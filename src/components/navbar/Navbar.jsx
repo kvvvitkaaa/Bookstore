@@ -21,19 +21,15 @@ const Navbar = () => {
 
     return ( 
         <nav className="navbar">
-            <div className="container">
-
-                <div className="nav-row">
-                    <NavLink to="/" className="logo">Book Universe / {username} </NavLink>
+                <div className="navbar-row">
+                    <NavLink to="/" className="logo">Book Universe {username !== null ? `/${username}` : ''} </NavLink>
 
                     <div className="menu">
                         <NavLink to="/cart"><img className="navbar-icon" src={cart} alt="cart"/></NavLink>
-                        <button className="btn" href="#!" onClick={handleClick}>Sign out</button>
                         <img className="navbar-icon" src={avatar} alt="profile" />
+                        <button className="btn" href="#!" onClick={handleClick}>Sign out</button>
                     </div>
                 </div>
-                
-            </div>
         </nav>
      );
 }
