@@ -8,6 +8,10 @@
 p+p {
     margin-top: 1em;
 }
+
+p {
+    font-size: 1em;
+}
 .container {
     position: relative;
     padding: 15px 15px 0; 
@@ -32,18 +36,18 @@ p+p {
 html, body {
     min-height: 100vh;
     width: 100%;
-    margin: 0; /* Убираем отступы по умолчанию */
-    overflow-x: hidden; /* Предотвращаем появление горизонтальной прокрутки */
+    margin: 0;
+    overflow-x: hidden;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 500;
 }
 
 h2 {
     font-weight: 500;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .btn {
@@ -116,7 +120,7 @@ h2 {
 }
 
 .options-sorting {
-    -webkit-appearance:none; /* Safari and Chrome */
+    -webkit-appearance:none;
     appearance:none;
 
     background-color: white;

@@ -4,8 +4,8 @@
     justify-content: space-between;
     align-items: stretch;
 
-    column-gap: 10px;
-    margin: 30px auto;
+    column-gap: 1.5em;
+    margin: 2em auto;
 }
 
 .cover-wrapper {
@@ -23,40 +23,38 @@
     display: flex;
     flex-flow: column wrap;
 
-    row-gap: 10px;
-    padding: 10px;
+    row-gap: 1em;
+    padding: 0 0 1.5em;
 
     color: white;
 
 }
 
 .payment {
+    position: relative;
+
     display: flex;
     justify-content: space-between;
-    column-gap: 60px;
+    column-gap: 1em;
 
-    background-color: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 1em;
 
-    position: relative;
     min-height: fit-content;
     min-width: fit-content;
 
+    background-color: white;
     -webkit-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
 }
-
-/* .payment-column {
-    min-height: 300px;
-} */
 
 .payment-column:first-child{
     text-align: left;
 }
 .payment-column:nth-child(2){
     text-align: right;
+    padding-bottom: 3em;
 }
 
 .payment-column li {
@@ -67,11 +65,47 @@
 
 .row .btn {
     position: absolute;
-    right: 15px;
-    bottom: 15px;
+
+    width: 9em;
+    height: 3em;
+
+    padding: 5px;
+    right: 0.5em;
+    bottom: 1em;
+
+    margin-top: 2em;
 }
 
 .book-description {
     margin-bottom: 30px;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .cover-wrapper {
+        margin-bottom: 1em;
+    }
+
+    /* .book-information {
+        order: 3;
+        text-align: left;
+        padding: 2em 0 0;
+    } */
+
+    .payment {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .payment{
+        margin-top: 1em;
+        order: 3;
+        width: 100%;
+    }
 }

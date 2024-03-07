@@ -27,7 +27,6 @@ function BookPage() {
                 <div className='cover-wrapper'>
                     <img className="cover" src={book.image || notFound} alt="cover" />
                 </div>
-
                 <ul className="book-information">
                     <li><h1>{book.title} </h1></li>
                     <li><h2>{book.author} </h2></li>
@@ -54,7 +53,7 @@ function BookPage() {
                 </div>
             </div>
             <aside className="book-description">
-                <h1>Description:</h1>
+                <h2>Description:</h2>
                 <p>{book.description}</p>
             </aside>
         </div>
