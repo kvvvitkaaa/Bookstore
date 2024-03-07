@@ -34,4 +34,8 @@ label {
      border-radius: 10px;
      text-align: left;
      padding: 5px;
-} 
+}
+
+.form-info {
+    text-align: center;
+}
