@@ -33,8 +33,33 @@
 
 .navbar-icon {
     max-height: 55px;
-    min-width: 55px;
+    max-width: 55px;
     
+}
+
+.navbar-icon:first-child {
+    position: relative;
+}
+
+
+.cart-items-count {
+    position: absolute;
+
+    content: attr(value);
+
+    font-size: 1em;
+    text-align: center;
+
+    color: #fff;
+    background: rgb(134, 26, 26);
+
+    border-radius:50%;
+    height: 1.5em;
+    width: 1.5em;
+
+    top: -4px;
+    right: -2px;
+
 }
 
 @media (max-width: 768px) {

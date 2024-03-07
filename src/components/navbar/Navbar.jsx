@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const username = JSON.parse(localStorage.getItem('username'));
     const navigate = useNavigate();
-    const {clearCart} = useContext(ShopContext);
+    const {clearCart, cartItems} = useContext(ShopContext);
 
     const handleClick = () => {
         localStorage.clear();
@@ -19,16 +19,33 @@ const Navbar = () => {
 
     }
 
+    const itemsInCart = [];
+
+    Object.entries(cartItems).forEach(([productId, quantity]) => {
+        for (let i = 0; i < quantity; i++) {
+            itemsInCart.push(productId);
+        }
+    });
+
+    console.log(itemsInCart);
+
     return ( 
         <nav className="navbar">
                 <div className="navbar-row">
                     <NavLink to="/" className="logo">Book Universe {username !== null ? `/${username}` : ''} </NavLink>
 
-                    <div className="menu">
-                        <NavLink to="/cart"><img className="navbar-icon" src={cart} alt="cart"/></NavLink>
-                        <img className="navbar-icon" src={avatar} alt="profile" />
-                        <button className="btn" href="#!" onClick={handleClick}>Sign out</button>
-                    </div>
+                    {username !== null ?
+                        (<div className="menu">
+                            <NavLink to="/cart" className="navbar-icon">
+                                <img className="navbar-icon" src={cart} alt="cart" />
+                                {itemsInCart.length > 0 && (
+                                    <span className="cart-items-count">{itemsInCart.length}</span>
+                                )}
+                            </NavLink>
+                            <img className="navbar-icon" src={avatar} alt="profile" />
+                            <button className="btn" href="#!" onClick={handleClick}>Sign out</button>
+                        </div>) : <></>
+                        }
                 </div>
         </nav>
      );
