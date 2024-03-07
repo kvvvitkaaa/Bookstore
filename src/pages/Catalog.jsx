@@ -1,7 +1,6 @@
 import Book from "../components/book/Book";
 import booksData from "../helpers/books.json";
 import { useState} from "react";
-import search from '../img/search.svg';
 
 const Catalog = () => {
 
@@ -40,10 +39,7 @@ const Catalog = () => {
                     <option value="asc">Price: ascending</option>
                     <option value="abc">Alphabetically</option>
                 </select >
-                <div className="options-search">
-                    <img src={search} width='30' height='30' alt=''/>
                     <input type="text" placeholder="search..." className="search" name="search" onChange={handleSearch}/>
-                </div>
             </div>
             {filteredBooks.length > 0 ?
             (<div className="catalog-wrapper">
