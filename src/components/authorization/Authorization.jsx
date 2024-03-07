@@ -40,7 +40,7 @@ const Authorization = () => {
                         onInput={(e) => e.target.value = e.target.value.replace(/[^a-zA-Z]/g, '')}
                         onChange={handleInput}
                     />
-                    <div className="form-info"><p>Your username should be from 4 to 16 characters</p></div>
+                    <div className="form-info"><p>Your name must be in Latin and be between 4 and 16 characters long.</p></div>
                     <button className="btn btn-submit" disabled={username.length < 4 || username.length > 16}>Sign in</button>
                 </form>
             </div>
