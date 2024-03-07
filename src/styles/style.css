@@ -111,6 +111,7 @@ h2 {
 
     margin-top: 10px; 
     column-gap: 40px;
+    padding: 7px;
 
 }
 
@@ -153,7 +154,7 @@ h2 {
     background-repeat: no-repeat;
     background-position: right 1em top 0.5em;
 
-    padding: 0.5em 6em 0.5em 0.4em;
+    padding: 0.5em 2em 0.5em 0.4em;
 
     border-radius: 6px;
 
