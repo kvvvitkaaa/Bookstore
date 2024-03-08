@@ -1,5 +1,6 @@
 .row {
     display: flex;
+
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
@@ -11,8 +12,10 @@
 .cover-wrapper {
     min-width: fit-content;
     max-height: fit-content;
+
     padding: 10px;
     border-radius: 10px;
+
     background-color: white;
     -webkit-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
     -moz-box-shadow: 8px 8px 24px 0px rgba(91, 91, 91, 1);
@@ -21,6 +24,7 @@
 
 .book-information {
     display: flex;
+
     flex-flow: column wrap;
 
     row-gap: 1em;
@@ -54,11 +58,13 @@
 }
 .payment-column:nth-child(2){
     text-align: right;
+
     padding-bottom: 3em;
 }
 
 .payment-column li {
     height: 30px;
+
     margin-bottom: 10px;
 }
 
@@ -78,6 +84,7 @@
 
 .book-description {
     margin-bottom: 30px;
+
     color: white;
 }
 
@@ -91,12 +98,6 @@
         margin-bottom: 1em;
     }
 
-    /* .book-information {
-        order: 3;
-        text-align: left;
-        padding: 2em 0 0;
-    } */
-
     .payment {
         width: 100%;
     }
@@ -104,8 +105,9 @@
 
 @media screen and (max-width: 568px) {
     .payment{
+        width: 100%;
+
         margin-top: 1em;
         order: 3;
-        width: 100%;
     }
 }

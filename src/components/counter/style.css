@@ -1,25 +1,30 @@
 .counter-wrapper {
 	display: flex;
+
     justify-content: space-evenly;
     
-    background: #f2ede7;
 	border-radius: 8px;
+
 	max-width: 90px;
-	
-	font-size: 18px;
 	height: 30px;
+
 	overflow: hidden;
 
+	background: #f2ede7;
+	font-size: 18px;
 }
 
 .counter{
     width: 30px;
+
     text-align: center;
 }
 .counter-btn{
     width: 30px;
+
 	cursor: pointer;
 	transition: 0.2s ease-in;
+	
 	text-align: center;
 }
 .counter-btn:hover {

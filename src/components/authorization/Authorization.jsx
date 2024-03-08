@@ -27,7 +27,7 @@ const Authorization = () => {
 
             <div className="column">
                 <img className="avatar" src={avatar} alt="avatar" />
-                <form className="signin-form" onSubmit={handleSubmit}>
+                <form className="signin-form" onSubmit={handleSubmit} autoComplete="on">
                     <label htmlFor="username">Username</label>
                     <input
                         id="username"

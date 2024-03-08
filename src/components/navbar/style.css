@@ -1,12 +1,15 @@
 .navbar {
     min-width: fit-content;
+
     padding: 2em 1em;
+
     border-bottom: 1px solid black;
     background-color: #fff;
 }
 
 .navbar-row {
     display: flex;
+
     justify-content:flex-end;
     align-items: center;
     flex-direction: row;
@@ -24,6 +27,7 @@
 
 .menu {
     display: flex;
+
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -47,18 +51,18 @@
 
     content: attr(value);
 
-    font-size: 1em;
-    text-align: center;
-
-    color: #fff;
-    background: rgb(166, 32, 32);
-
     border-radius:50%;
     height: 1.5em;
     width: 1.5em;
 
     top: -4px;
     right: -5px;
+
+    font-size: 1em;
+    text-align: center;
+
+    color: #fff;
+    background: rgb(166, 32, 32);
 
 }
 

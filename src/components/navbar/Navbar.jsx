@@ -27,7 +27,6 @@ const Navbar = () => {
         }
     });
 
-    console.log(itemsInCart);
 
     return ( 
         <nav className="navbar">
