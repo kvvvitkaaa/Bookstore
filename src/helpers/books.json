@@ -26,7 +26,8 @@
 			"tags": [
 				"core",
 				"frontend",
-				"javascript"
+				"javascript",
+				"code"
 			],
 			"amount": 42,
 			"shortDescription": "Building robust apps starts with creating clean code. In this book, you'll explore techniques for doing this by learning everything from the basics of JavaScript through to the practices of clean code. You'll write functional, intuitive, and maintainable code while also understanding how your code affects the end user and the wider community.",
